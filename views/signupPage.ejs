@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="\stylesheets\style.css">
+</head>
+
+<body>
+
+    <form id="signup-form">
+        <h2>Sign Up</h2>
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <p id="error-message" style="color: red;"></p>
+        <button type="submit" id="submit">Sign Up</button>
+        <a href="/login">Login</a>
+    </form>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const email = document.querySelector('#email').value;
+            const username = document.querySelector('#username').value;
+            const password = document.querySelector('#password').value;
+            document.querySelector('#error-message').textContent = '';
+
+            try {
+                const response = await fetch('/signup', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email, username, password })
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    window.location.href = result.redirectUrl;
+                } else {
+                    document.querySelector('#error-message').textContent = result.message;
+                }
+            } catch (error) {
+                console.error('Error during signup:', error);
+                document.querySelector('#error-message').textContent = 'An error occurred during signup.';
+            }
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+#container {
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+#container h1 {
+    text-align: center;
+}
+
+#input-box,
+#edit-box {
+    height: 30px;
+    width: 75%;
+}
+
+#addBtn,
+#editBtn {
+    height: 33px;
+    width: 20%;
+    font-size: 15px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.list {
+    position: relative;
+    border: 2px solid black;
+    width: 96.4%;
+    margin-top: 20px;
+    height: 40px;
+}
+
+input[type="checkbox"] {
+    position: absolute;
+    left: 2%;
+    top: 5px;
+    zoom: 1.5;
+    cursor: pointer;
+}
+
+.list i {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.list p {
+    position: absolute;
+    left: 10%;
+    top: -6px;
+    width: 40%;
+}
+
+#editForm {
+    position: absolute;
+    left: 10%;
+    top: 10px;
+}
+
+.completed {
+    text-decoration: line-through;
+}
+
+#editIcon {
+    position: absolute;
+    right: 12%;
+}
+
+#editTask {
+    display: none;
+}
+
+.hide {
+    display: none;
+}

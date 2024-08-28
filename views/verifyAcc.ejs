@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+    <link rel="stylesheet" href="/stylesheets/verify.css">
+</head>
+<body>
+    <div class="otp-container">
+        <img src="/images/verifyImage-removebg-preview.png" alt="verifyImage" id="image">
+        <h1>Enter OTP Code</h1>
+        <p>OTP send on your gmail</p>
+
+        <form id="otp-form" action="/verifyOTP" method="post">
+
+            <div class="otp-inputs">
+                <input type="text" maxlength="1" class="otp-input" id="otp1" required>
+                <input type="text" maxlength="1" class="otp-input" id="otp2" required>
+                <input type="text" maxlength="1" class="otp-input" id="otp3" required>
+                <input type="text" maxlength="1" class="otp-input" id="otp4" required>
+            </div>
+
+            <button type="submit" class="submit-btn">Verify</button>
+            <button type="button" id="re-send" >Resend</button>
+
+            <div id="timer">
+                
+            </div>
+        </form>
+        <p id="error-message" class="error-message"></p>
+    </div>
+
+    <script src="/javascripts/verify.js"></script>
+</body>
+</html>

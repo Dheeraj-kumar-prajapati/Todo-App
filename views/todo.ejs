@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="./stylesheets/todoStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div id="container">
+        <h1>Welcome  <%= username %></h1>
+
+        <div id="task-form" class="">
+            <input type="text" name="newTask" id="input-box" placeholder="Enter Task" autocomplete="off">
+            <button type="button" id="addBtn">Add</button>
+        </div>
+
+
+        <div id="edit-form" class="hide">
+            <input type="text" name="editTask" id="edit-box" placeholder="Edit your Task">
+            <button type="button" id="editBtn">Edit</button>
+        </div>
+
+        <div id="list-container">
+            
+        </div>
+
+    </div>
+    <script src="./javascripts/script.js"></script>
+</body>
+
+</html>
